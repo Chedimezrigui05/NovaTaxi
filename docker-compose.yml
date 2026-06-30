@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: novataxi
+      POSTGRES_PASSWORD: novataxi
+      POSTGRES_DB: novataxi
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    command: sh -c "python manage.py migrate --noinput && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgres://novataxi:novataxi@db:5432/novataxi
+    depends_on:
+      - db
+    env_file:
+      - ./backend/.env
+
+  frontend:
+    build: ./frontend
+    command: npm run dev
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
