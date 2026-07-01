@@ -15,9 +15,9 @@ interface ToastProps {
 }
 
 const toastStyles = {
-  default: 'bg-slate-950 text-white',
+  default: 'bg-brand-500 text-slate-950',
   success: 'bg-emerald-600 text-white',
-  warning: 'bg-amber-500 text-slate-950',
+  warning: 'bg-brand-500 text-slate-950',
   destructive: 'bg-rose-600 text-white',
 };
 
@@ -28,7 +28,7 @@ const Toast = ({ open, message, variant = 'default', duration = 4000, onClose, a
     <AnimatePresence>
       <Motion.div
         className={cn(
-          'fixed right-4 top-4 z-50 w-[min(380px,calc(100%-2rem))] rounded-3xl px-5 py-4 shadow-2xl shadow-slate-950/20',
+          'fixed right-4 top-4 z-50 w-[min(380px,calc(100%-2rem))] rounded-3xl px-5 py-4 shadow-2xl shadow-brand-500/20',
           toastStyles[variant]
         )}
         initial={{ opacity: 0, x: 32 }}

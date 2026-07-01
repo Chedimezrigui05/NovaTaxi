@@ -7,13 +7,15 @@ import { cn } from '@/lib/utils';
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center rounded-full transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 focus-visible:ring-white disabled:pointer-events-none disabled:opacity-50',
+  'group relative inline-flex items-center justify-center overflow-hidden rounded-full font-medium transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-white focus-visible:ring-brand-400 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
-        primary: 'bg-slate-950 text-white shadow-lg shadow-slate-950/20 hover:bg-slate-800',
-        secondary: 'bg-white text-slate-950 border border-slate-200 hover:border-slate-300',
-        ghost: 'bg-transparent text-slate-950 hover:bg-slate-100',
+        primary:
+          'bg-gradient-to-r from-brand-400 via-brand-500 to-gilt-500 bg-[length:200%_100%] bg-left text-brand-950 shadow-gold hover:bg-right hover:shadow-gold-lg',
+        secondary:
+          'border border-brand-200 bg-white text-slate-950 shadow-sm hover:border-brand-400 hover:bg-brand-50',
+        ghost: 'bg-transparent text-slate-950 hover:bg-brand-50',
         destructive: 'bg-rose-500 text-white hover:bg-rose-600',
       },
       size: {
@@ -39,9 +41,19 @@ const Button = ({ className, variant, size, asChild = false, children, ...props 
   const Comp = asChild ? Slot : 'button';
 
   return (
-    <Motion.div whileTap={{ scale: 0.98 }} whileHover={{ y: -1 }}>
+    <Motion.div
+      whileTap={{ scale: 0.98 }}
+      whileHover={{ y: -1 }}
+      className="inline-block transition-[background-position] duration-500"
+    >
       <Comp className={cn(buttonVariants({ variant, size, className }))} {...props}>
-        {children}
+        {variant === 'primary' || variant === undefined ? (
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+          />
+        ) : null}
+        <span className="relative z-10 inline-flex items-center gap-2">{children}</span>
       </Comp>
     </Motion.div>
   );

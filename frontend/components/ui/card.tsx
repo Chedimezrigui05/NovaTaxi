@@ -14,8 +14,8 @@ const Card = ({ className, children, ...props }: CardProps) => (
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.3, ease: 'easeOut' }}
     className={cn(
-      'rounded-3xl border border-slate-200/80 bg-white/90 shadow-2xl shadow-slate-950/5 backdrop-blur-xl',
-      'overflow-hidden',
+      'gold-ring rounded-3xl border border-brand-100 bg-white/90 shadow-glow backdrop-blur-xl',
+      'overflow-hidden transition-shadow duration-300 hover:shadow-gold-lg',
       className
     )}
     {...props}

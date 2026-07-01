@@ -20,7 +20,7 @@ const Table = ({ headers, rows, className, ...props }: TableProps) => (
     <div className="overflow-x-auto">
       <table className="w-full">
         <thead>
-          <tr className="border-b-2 border-slate-200 bg-slate-50">
+          <tr className="border-b-2 border-brand-100 bg-brand-50">
             {headers.map((header) => (
               <th
                 key={header}
@@ -35,7 +35,7 @@ const Table = ({ headers, rows, className, ...props }: TableProps) => (
           {rows.map((row, rowIndex) => (
             <tr
               key={rowIndex}
-              className="transition-all duration-200 hover:bg-slate-50"
+              className="transition-all duration-200 hover:bg-brand-50"
             >
               {row.map((cell, cellIndex) => (
                 <td

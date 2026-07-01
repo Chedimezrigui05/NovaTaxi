@@ -16,8 +16,8 @@ interface ModalProps {
 const Modal = ({ open, onClose, title, description, children }: ModalProps) => (
   <AnimatePresence>
     {open ? (
-      <motion.div
-        className="fixed inset-0 z-50 flex items-end justify-center bg-slate-950/60 p-6 sm:items-center"
+      <Motion.div
+        className="fixed inset-0 z-50 flex items-end justify-center bg-brand-500/10 p-6 sm:items-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -25,8 +25,8 @@ const Modal = ({ open, onClose, title, description, children }: ModalProps) => (
       >
         <Motion.div
           className={cn(
-            'w-full max-w-2xl rounded-[2rem] bg-white p-6 shadow-2xl shadow-slate-950/20',
-            'border border-slate-200'
+            'w-full max-w-2xl rounded-[2rem] bg-white p-6 shadow-2xl shadow-brand-500/10',
+            'border border-brand-100'
           )}
           initial={{ y: 40, opacity: 0, scale: 0.98 }}
           animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -52,12 +52,12 @@ const Modal = ({ open, onClose, title, description, children }: ModalProps) => (
           <button
             type="button"
             onClick={onClose}
-            className="mt-6 inline-flex rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+            className="mt-6 inline-flex rounded-full bg-brand-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-brand-600"
           >
             Close
           </button>
         </Motion.div>
-      </motion.div>
+      </Motion.div>
     ) : null}
   </AnimatePresence>
 );

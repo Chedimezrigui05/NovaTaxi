@@ -9,9 +9,9 @@ type BadgeProps = ComponentPropsWithoutRef<'div'> & {
 };
 
 const badgeStyles = {
-  default: 'bg-slate-950 text-white',
+  default: 'bg-gradient-to-r from-brand-100 via-brand-200 to-brand-100 text-brand-900 ring-1 ring-brand-300',
   success: 'bg-emerald-500/10 text-emerald-600 ring-1 ring-emerald-500/20',
-  warning: 'bg-amber-400/10 text-amber-700 ring-1 ring-amber-400/30',
+  warning: 'bg-brand-400/10 text-brand-700 ring-1 ring-brand-400/30',
   destructive: 'bg-rose-500/10 text-rose-600 ring-1 ring-rose-500/15',
 };
 

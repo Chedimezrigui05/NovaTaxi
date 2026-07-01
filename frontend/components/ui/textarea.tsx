@@ -12,7 +12,7 @@ const Textarea = ({ className, ...props }: TextareaProps) => (
     whileFocus={{ scale: 1.005 }}
     transition={{ duration: 0.2, ease: 'easeOut' }}
     className={cn(
-      'min-h-[140px] w-full rounded-3xl border border-slate-200/80 bg-slate-50 px-4 py-3 text-slate-950 placeholder:text-slate-400 outline-none transition-colors duration-200 focus:border-slate-900 focus:bg-white focus:ring-2 focus:ring-slate-200',
+      'min-h-[140px] w-full rounded-3xl border border-brand-200/80 bg-brand-50 px-4 py-3 text-slate-950 placeholder:text-brand-400 outline-none transition-colors duration-200 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-200',
       className
     )}
     {...props}
