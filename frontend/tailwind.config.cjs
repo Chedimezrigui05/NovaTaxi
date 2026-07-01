@@ -7,16 +7,16 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          50: '#f8fafc',
-          100: '#eef2ff',
-          200: '#e0e7ff',
-          300: '#c7d2fe',
-          400: '#a5b4fc',
-          500: '#7c3aed',
-          600: '#6d28d9',
-          700: '#5b21b6',
-          800: '#4c1d95',
-          900: '#3b0764'
+          50: '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          400: '#fbbf24',
+          500: '#f59e0b',
+          600: '#d97706',
+          700: '#b45309',
+          800: '#92400e',
+          900: '#78350f'
         },
         surface: {
           50: '#f8fafc',
@@ -32,7 +32,7 @@ module.exports = {
         }
       },
       boxShadow: {
-        soft: '0 20px 80px rgba(15, 23, 42, 0.08)',
+        soft: '0 20px 80px rgba(21, 42, 15, 0.08)',
         glow: '0 0 0 1px rgba(226,232,240,0.45), 0 20px 70px rgba(15,23,42,0.08)'
       },
       fontFamily: {

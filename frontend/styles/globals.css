@@ -11,8 +11,8 @@
   --border: #e2e8f0;
   --text: #0f172a;
   --muted: #475569;
-  --brand: #4f46e5;
-  --brand-soft: #eef2ff;
+  --brand-soft: #fffbeb;
+  --brand: #f59e0b;
 }
 
 html,
@@ -33,6 +33,6 @@ body {
 }
 
 ::selection {
-  background: rgba(79, 70, 229, 0.18);
+  background: rgba(245, 158, 11, 0.18);
   color: var(--text);
 }
