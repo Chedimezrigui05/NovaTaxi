@@ -11,63 +11,7 @@ import { Navbar } from '@/components/ui/navbar';
 import { Textarea } from '@/components/ui/textarea';
 import { Motion } from '@/lib/motion';
 import { useState } from 'react';
-import { Shield, Zap, Clock, Users, MapPin, ChevronDown, Apple, Play, Mail, Phone, MessageSquare, Star } from 'lucide-react';
-
-const bulletItems = [
-  'Chauffeurs vérifiés',
-  'Réservation instantanée',
-  'Support 24/7',
-  'Paiement sécurisé',
-];
-
-const serviceCards = [
-  {
-    title: 'Trajet Standard',
-    description: 'Transport quotidien fiable et abordable pour vos déplacements urbains.',
-    accent: 'bg-brand-50 text-brand-900',
-  },
-  {
-    title: 'Premium',
-    description: 'Véhicules haut de gamme et prise en charge prioritaire.',
-    accent: 'bg-brand-50 text-brand-900',
-  },
-  {
-    title: 'XL',
-    description: 'Espaces larges pour les groupes et les bagages volumineux.',
-    accent: 'bg-brand-50 text-brand-900',
-  },
-];
-
-const testimonials = [
-  {
-    quote: "Service impeccable, chauffeurs ponctuels et application très fluide.",
-    author: 'Sarah, entrepreneure',
-  },
-  {
-    quote: "J’utilise NovaTaxi tous les jours, c’est devenu indispensable.",
-    author: 'Alex, consultant',
-  },
-  {
-    quote: "Rides fiables et très bon rapport qualité-prix.",
-    author: 'Mia, influenceuse',
-  },
-];
-
-const faqs = [
-  {
-    question: 'Comment réserver un trajet ?',
-    answer:
-      'Ouvrez l’application, entrez votre destination, choisissez votre véhicule et confirmez. Un chauffeur sera rapidement assigné.',
-  },
-  {
-    question: 'Quels moyens de paiement sont acceptés ?',
-    answer: 'Carte bancaire, portefeuille mobile, et paiement en espèces selon la zone.',
-  },
-  {
-    question: 'Puis-je annuler ma course ?',
-    answer: 'Oui, vous pouvez annuler sans frais jusqu’à 5 minutes avant la prise en charge.',
-  },
-];
+import { Shield, Zap, Clock, Users, ChevronDown, Apple, Play, Mail, Phone, MessageSquare, Star } from 'lucide-react';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -101,14 +45,14 @@ function HeroSection() {
         <div className="grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <Motion.div initial="hidden" animate="visible" variants={fadeInVariants} className="space-y-8">
             <Badge className="w-fit border-none bg-gradient-to-r from-brand-400/25 via-brand-300/20 to-gilt-500/25 text-brand-200 ring-1 ring-brand-400/30">
-              NOUVEAU • NovaTaxi Premium
+              NOUVEAU • NovaTaxi Confort
             </Badge>
             <div className="space-y-6 max-w-2xl">
               <h1 className="text-5xl font-bold tracking-tight leading-tight lg:text-6xl">
                 <span className="text-gradient-gold">Voyagez plus vite et plus sereinement en Tunisie.</span>
               </h1>
               <p className="text-xl leading-8 text-black">
-                NovaTaxi vous offre une expérience ride premium, fiable et sécurisée à chaque déplacement.
+                NovaTaxi vous offre une expérience ride fiable et sécurisée à chaque déplacement.
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -127,7 +71,7 @@ function HeroSection() {
               <div className="absolute -bottom-16 -left-10 h-40 w-40 rounded-full bg-gilt-500/15 blur-3xl" />
               <div className="relative space-y-8">
                 <div className="rounded-[2rem] border border-white/5 bg-slate-900 p-8 text-white shadow-xl shadow-slate-950/30">
-                  <p className="text-sm uppercase tracking-[0.28em] text-gradient-gold">Premium</p>
+                  <p className="text-sm uppercase tracking-[0.28em] text-gradient-gold">Confort</p>
                   <h2 className="mt-4 text-3xl font-bold">Voyage express</h2>
                   <p className="mt-4 text-slate-300">Prenez la route avec un chauffeur proche et un service instantané.</p>
                   <div className="mt-5 flex flex-wrap gap-2">
@@ -165,30 +109,29 @@ function FeaturesSection() {
   const features = [
     {
       icon: Shield,
-      title: 'Safety First',
-      description: 'AI-powered safety monitoring and verified professional drivers',
+      title: 'Sécurité',
+      description: 'Surveillance de sécurité intelligente et chauffeurs professionnels vérifiés',
     },
     {
       icon: Zap,
-      title: 'Lightning Fast',
-      description: 'Get matched with a driver in under 30 seconds',
+      title: 'Ultra rapide',
+      description: 'Un chauffeur vous est attribué en moins de 30 secondes',
     },
     {
       icon: Clock,
-      title: 'Schedule Ahead',
-      description: 'Book rides up to 30 days in advance',
+      title: 'Planification',
+      description: 'Réservez vos trajets jusqu’à 30 jours à l’avance',
     },
     {
       icon: Users,
-      title: 'Group Rides',
-      description: 'Share rides with friends and save up to 40%',
+      title: 'Trajets partagés',
+      description: 'Partagez vos trajets et économisez jusqu’à 40%',
     },
   ];
 
   return (
     <section className="bg-white py-20 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Header */}
         <Motion.div
           className="mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -196,20 +139,13 @@ function FeaturesSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <SectionTitle>Why Choose NovaTaxi</SectionTitle>
+          <SectionTitle>Pourquoi choisir NovaTaxi</SectionTitle>
           <p className="mt-4 text-xl text-slate-600">
-            Features designed for your convenience
+            Des fonctionnalités pensées pour votre confort
           </p>
         </Motion.div>
 
-        {/* Grid */}
-        <Motion.div
-          className="grid gap-8 md:grid-cols-2 lg:grid-cols-4"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           {features.map((feature, idx) => {
             const Icon = feature.icon;
             return (
@@ -218,15 +154,13 @@ function FeaturesSection() {
                   <div className="inline-block rounded-2xl bg-brand-50 p-3 transition-colors group-hover:bg-brand-100">
                     <Icon className="h-6 w-6 text-brand-600" />
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-950">
-                    {feature.title}
-                  </h3>
+                  <h3 className="text-lg font-semibold text-slate-950">{feature.title}</h3>
                   <p className="text-slate-600">{feature.description}</p>
                 </Card>
               </Motion.div>
             );
           })}
-        </Motion.div>
+        </div>
       </div>
     </section>
   );
@@ -237,23 +171,23 @@ function HowItWorksSection() {
   const steps = [
     {
       number: '01',
-      title: 'Open App',
-      description: 'Launch NovaTaxi and set your destination',
+      title: 'Ouvrez l’app',
+      description: 'Lancez NovaTaxi et indiquez votre destination',
     },
     {
       number: '02',
-      title: 'Confirm Details',
-      description: 'Review fare estimate and confirm booking',
+      title: 'Confirmez les détails',
+      description: 'Vérifiez le tarif et confirmez votre course',
     },
     {
       number: '03',
-      title: 'Get Matched',
-      description: 'Connected with your driver instantly',
+      title: 'Obtenez un chauffeur',
+      description: 'Un chauffeur est assigné en quelques secondes',
     },
     {
       number: '04',
-      title: 'Enjoy Ride',
-      description: 'Sit back and reach your destination safely',
+      title: 'Profitez du trajet',
+      description: 'Détendez-vous et arrivez en toute sécurité',
     },
   ];
 
@@ -268,13 +202,10 @@ function HowItWorksSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <SectionTitle>How It Works</SectionTitle>
-          <p className="mt-4 text-xl text-slate-600">
-            Get from A to B in 4 simple steps
-          </p>
+          <SectionTitle>Comment ça marche</SectionTitle>
+          <p className="mt-4 text-xl text-slate-600">Allez de A à B en 4 étapes simples</p>
         </Motion.div>
 
-        {/* Steps */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, idx) => (
             <Motion.div
@@ -285,7 +216,6 @@ function HowItWorksSection() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
             >
-              {/* Connector line */}
               {idx < steps.length - 1 && (
                 <div className="absolute -right-4 top-8 hidden h-1 w-8 bg-brand-200 lg:block" />
               )}
@@ -294,9 +224,7 @@ function HowItWorksSection() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-400 text-lg font-bold text-slate-950">
                   {step.number}
                 </div>
-                <h3 className="text-lg font-semibold text-slate-950">
-                  {step.title}
-                </h3>
+                <h3 className="text-lg font-semibold text-slate-950">{step.title}</h3>
                 <p className="text-slate-600">{step.description}</p>
               </Card>
             </Motion.div>
@@ -312,20 +240,20 @@ function TestimonialsSection() {
   const testimonials = [
     {
       name: 'Sarah Anderson',
-      role: 'CEO, Tech Startup',
-      content: 'NovaTaxi has completely changed how I commute. Fast, reliable, and professional!',
+      role: 'Fondatrice',
+      content: 'NovaTaxi a complètement changé ma façon de voyager. Rapide, fiable et professionnel !',
       rating: 5,
     },
     {
       name: 'Mike Johnson',
-      role: 'Business Consultant',
-      content: 'Best ride-sharing experience I\'ve had. The driver was courteous and the app is intuitive.',
+      role: 'Consultant',
+      content: 'La meilleure expérience de transport que j’ai eue. Le chauffeur était courtois et l’application est intuitive.',
       rating: 5,
     },
     {
       name: 'Emily Chen',
-      role: 'Travel Blogger',
-      content: 'Perfect for traveling between cities. Always on time and great value for money.',
+      role: 'Blogueuse voyage',
+      content: 'Parfait pour voyager entre les villes. Toujours à l’heure et très bon rapport qualité-prix.',
       rating: 5,
     },
   ];
@@ -341,13 +269,10 @@ function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <SectionTitle>What Our Riders Say</SectionTitle>
-          <p className="mt-4 text-xl text-slate-600">
-            Join thousands of happy customers
-          </p>
+          <SectionTitle>Ce que disent nos passagers</SectionTitle>
+          <p className="mt-4 text-xl text-slate-600">Rejoignez des milliers de clients satisfaits</p>
         </Motion.div>
 
-        {/* Grid */}
         <Motion.div
           className="grid gap-8 md:grid-cols-3"
           variants={containerVariants}
@@ -360,17 +285,12 @@ function TestimonialsSection() {
               <Card className="h-full space-y-4 p-6">
                 <div className="flex gap-1">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 fill-brand-400 text-brand-400"
-                    />
+                    <Star key={i} className="h-4 w-4 fill-brand-400 text-brand-400" />
                   ))}
                 </div>
                 <p className="text-slate-700">{testimonial.content}</p>
                 <div className="border-t border-slate-200 pt-4">
-                  <p className="font-semibold text-slate-950">
-                    {testimonial.name}
-                  </p>
+                  <p className="font-semibold text-slate-950">{testimonial.name}</p>
                   <p className="text-sm text-slate-600">{testimonial.role}</p>
                 </div>
               </Card>
@@ -388,31 +308,30 @@ function FAQSection() {
 
   const faqs = [
     {
-      question: 'How do I book a ride?',
+      question: 'Comment réserver un trajet ?',
       answer:
-        'Open the NovaTaxi app, enter your destination, select your ride type, and confirm. A driver will be matched with you in seconds.',
+        'Ouvrez l’application NovaTaxi, indiquez votre destination, choisissez votre type de course et confirmez. Un chauffeur vous sera attribué en quelques secondes.',
     },
     {
-      question: 'What payment methods do you accept?',
+      question: 'Quels moyens de paiement acceptez-vous ?',
       answer:
-        'We accept all major credit cards, digital wallets, and bank transfers. You can also pay cash on select routes.',
+        'Nous acceptons les principales cartes bancaires, portefeuilles numériques et virements. Le paiement en espèces est également possible sur certaines routes.',
     },
     {
-      question: 'Are your drivers verified?',
+      question: 'Vos chauffeurs sont-ils vérifiés ?',
       answer:
-        'Yes, all our drivers undergo rigorous background checks, vehicle inspections, and training programs to ensure your safety.',
+        'Oui, tous nos chauffeurs passent des vérifications strictes, des contrôles de véhicule et des formations pour garantir votre sécurité.',
     },
     {
-      question: 'Can I cancel my ride?',
+      question: 'Puis-je annuler ma course ?',
       answer:
-        'You can cancel free of charge up to 5 minutes before pickup. After that, a small cancellation fee may apply.',
+        'Vous pouvez annuler sans frais jusqu’à 5 minutes avant la prise en charge. Après cela, des frais d’annulation peuvent s’appliquer.',
     },
   ];
 
   return (
     <section className="bg-slate-50 py-20 lg:py-32">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
-        {/* Header */}
         <Motion.div
           className="mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -420,16 +339,16 @@ function FAQSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <SectionTitle>Frequently Asked Questions</SectionTitle>
+          <SectionTitle>Questions fréquemment posées</SectionTitle>
+          <p className="mt-4 text-xl text-slate-600">Découvrez les réponses aux questions les plus courantes</p>
         </Motion.div>
 
-        {/* FAQs */}
         <div className="space-y-4">
           {faqs.map((faq, idx) => (
             <Motion.div
               key={idx}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
@@ -437,13 +356,8 @@ function FAQSection() {
                 onClick={() => setOpenFAQ(openFAQ === idx ? -1 : idx)}
                 className="flex w-full items-center justify-between rounded-lg border border-slate-200 bg-white p-4 text-left transition-all hover:border-brand-300 hover:shadow-md"
               >
-                <span className="font-semibold text-slate-950">
-                  {faq.question}
-                </span>
-                <Motion.div
-                  animate={{ rotate: openFAQ === idx ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                >
+                <span className="font-semibold text-slate-950">{faq.question}</span>
+                <Motion.div animate={{ rotate: openFAQ === idx ? 180 : 0 }} transition={{ duration: 0.3 }}>
                   <ChevronDown className="h-5 w-5 text-slate-600" />
                 </Motion.div>
               </button>
@@ -484,10 +398,10 @@ function DownloadAppSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold lg:text-5xl">
-              Download the App Today
+              Téléchargez l’application aujourd’hui
             </h2>
             <p className="text-lg text-brand-100">
-              Get exclusive app-only deals and book your rides on the go. Available on iOS and Android.
+              Profitez d’offres exclusives et réservez vos trajets en mobilité. Disponible sur iOS et Android.
             </p>
 
             <div className="flex flex-col gap-3 sm:flex-row">
@@ -557,9 +471,9 @@ function ContactSection() {
             viewport={{ once: true }}
           >
             <div>
-              <SectionTitle>Get in Touch</SectionTitle>
+              <SectionTitle>Contactez-nous</SectionTitle>
               <p className="mt-4 text-lg text-slate-600">
-                Have questions? Our support team is here to help 24/7.
+                Des questions ? Notre équipe de support est disponible 24h/24.
               </p>
             </div>
 
@@ -606,12 +520,12 @@ function ContactSection() {
             <Card className="space-y-6 p-8">
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-950 mb-2">
-                    Name
+                      <label className="block text-sm font-medium text-slate-950 mb-2">
+                    Nom
                   </label>
                   <Input
                     type="text"
-                    placeholder="Your name"
+                    placeholder="Votre nom"
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
@@ -626,7 +540,7 @@ function ContactSection() {
                   </label>
                   <Input
                     type="email"
-                    placeholder="your@email.com"
+                    placeholder="votre@email.com"
                     value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
@@ -640,7 +554,7 @@ function ContactSection() {
                     Message
                   </label>
                   <Textarea
-                    placeholder="Your message here..."
+                    placeholder="Écrivez votre message ici..."
                     value={formData.message}
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
@@ -653,7 +567,7 @@ function ContactSection() {
                   type="submit"
                   className="w-full bg-brand-400 hover:bg-brand-500 text-slate-950 font-semibold"
                 >
-                  Send Message
+                  Envoyer
                 </Button>
               </form>
             </Card>

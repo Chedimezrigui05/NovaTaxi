@@ -8,7 +8,7 @@ const services = [
     accent: 'bg-brand-100 text-brand-800',
   },
   {
-    name: 'Premium',
+    name: 'Confort',
     description: 'Upgraded vehicles and priority service for important trips.',
     accent: 'bg-brand-100 text-brand-800',
   },
@@ -33,7 +33,7 @@ export default function ServicesPage() {
           <p className="inline-flex rounded-full bg-brand-100 px-3 py-1 text-sm font-semibold text-brand-700">
             Our services
           </p>
-          <h1 className="text-4xl font-bold tracking-tight text-slate-950">Designed for every ride, from daily commutes to premium city travel.</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-slate-950">Designed for every ride, from daily commutes to city travel.</h1>
           <p className="max-w-2xl text-lg leading-8 text-slate-600">
             NovaTaxi makes it easy to select the ride type that fits your schedule, budget, and comfort preferences.
           </p>

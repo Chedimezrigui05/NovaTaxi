@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
 
-const Motion = motion as any;
+const Motion = motion;
 
 export { Motion };

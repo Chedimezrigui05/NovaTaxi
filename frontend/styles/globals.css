@@ -87,7 +87,7 @@ body {
 }
 
 /* ---------------------------------------------------
-   Utility layer — premium building blocks
+   Utility layer — polished building blocks
 --------------------------------------------------- */
 @layer utilities {
   /* Gradient headline text */
@@ -113,7 +113,7 @@ body {
     border: 1px solid rgba(240, 180, 41, 0.18);
   }
 
-  /* Subtle animated gold border, used for premium cards on hover */
+  /* Subtle animated gold border, used for highlight cards on hover */
   .gold-ring {
     position: relative;
     isolation: isolate;

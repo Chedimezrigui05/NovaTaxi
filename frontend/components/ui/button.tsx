@@ -4,7 +4,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { Motion } from '@/lib/motion';
 import { Slot } from '@radix-ui/react-slot';
 import { cn } from '@/lib/utils';
-import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import type { ButtonHTMLAttributes } from 'react';
 
 const buttonVariants = cva(
   'group relative inline-flex items-center justify-center overflow-hidden rounded-full font-medium transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-white focus-visible:ring-brand-400 disabled:pointer-events-none disabled:opacity-50',

@@ -1,7 +1,6 @@
 'use client';
 
 import { Motion } from '@/lib/motion';
-import Link from 'next/link';
 
 const Footer = () => (
   <Motion.footer

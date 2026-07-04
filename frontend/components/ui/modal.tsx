@@ -32,7 +32,7 @@ const Modal = ({ open, onClose, title, description, children }: ModalProps) => (
           animate={{ y: 0, opacity: 1, scale: 1 }}
           exit={{ y: 30, opacity: 0, scale: 0.98 }}
           transition={{ duration: 0.25, ease: 'easeOut' }}
-          onClick={(event) => event.stopPropagation()}
+          onClick={(event: React.MouseEvent<HTMLDivElement>) => event.stopPropagation()}
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-title"

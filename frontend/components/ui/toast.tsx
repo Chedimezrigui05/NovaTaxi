@@ -34,7 +34,7 @@ const Toast = ({ open, message, variant = 'default', duration = 4000, onClose, a
         initial={{ opacity: 0, x: 32 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: 32 }}
-        transition={{ type: 'spring', stiffness: 260, damping: 24 }}
+        transition={{ type: 'spring', stiffness: 260, damping: 24, duration: duration / 1000 }}
         role="status"
         aria-live="polite"
       >
