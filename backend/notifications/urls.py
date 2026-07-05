@@ -11,3 +11,12 @@ router.register(r'', NotificationViewSet, basename='notification')
 urlpatterns = [
     path('', include(router.urls)),
 ]
+
+app_name = 'notifications'
+
+router = DefaultRouter()
+router.register(r'', NotificationViewSet, basename='notification')
+
+urlpatterns = [
+    path('', include(router.urls)),
+]

@@ -5,6 +5,26 @@ from rest_framework import serializers
 class DashboardStatsSerializer(serializers.Serializer):
     """Serializer for dashboard statistics."""
     total_rides = serializers.IntegerField()
+    completed_rides = serializers.IntegerField()
+    pending_rides = serializers.IntegerField()
+    cancelled_rides = serializers.IntegerField()
+    total_revenue = serializers.DecimalField(max_digits=12, decimal_places=2)
+    total_users = serializers.IntegerField()
+    total_drivers = serializers.IntegerField()
+    total_clients = serializers.IntegerField()
+
+
+class DashboardChartDataSerializer(serializers.Serializer):
+    """Serializer for dashboard chart data."""
+    date = serializers.DateField()
+    rides = serializers.IntegerField()
+    revenue = serializers.DecimalField(max_digits=12, decimal_places=2)
+from rest_framework import serializers
+
+
+class DashboardStatsSerializer(serializers.Serializer):
+    """Serializer for dashboard statistics."""
+    total_rides = serializers.IntegerField()
     total_clients = serializers.IntegerField()
     total_drivers = serializers.IntegerField()
     total_revenue = serializers.DecimalField(max_digits=12, decimal_places=2)

@@ -19,3 +19,14 @@ class RideSerializer(serializers.ModelSerializer):
             'started_at', 'completed_at', 'created_at', 'updated_at'
         ]
         read_only_fields = ['id', 'created_at', 'updated_at']
+
+
+class RideCreateSerializer(serializers.ModelSerializer):
+    """Serializer for creating rides."""
+    
+    class Meta:
+        model = Ride
+        fields = [
+            'pickup_location', 'dropoff_location', 'pickup_latitude',
+            'pickup_longitude', 'dropoff_latitude', 'dropoff_longitude'
+        ]

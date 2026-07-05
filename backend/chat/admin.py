@@ -5,6 +5,22 @@ from .models import ChatRoom, Message
 
 @admin.register(ChatRoom)
 class ChatRoomAdmin(admin.ModelAdmin):
+    list_display = ('id', 'ride', 'created_at')
+    search_fields = ('ride__id',)
+    list_filter = ('created_at',)
+    readonly_fields = ('created_at', 'updated_at')
+
+
+@admin.register(Message)
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ('sender', 'room', 'is_read', 'created_at')
+    search_fields = ('sender__username', 'content')
+    list_filter = ('is_read', 'created_at')
+    readonly_fields = ('created_at', 'updated_at')
+
+
+@admin.register(ChatRoom)
+class ChatRoomAdmin(admin.ModelAdmin):
     list_display = ('ride', 'created_at')
     search_fields = ('ride__id',)
     list_filter = ('created_at',)

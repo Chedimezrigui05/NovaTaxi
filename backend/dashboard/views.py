@@ -1,18 +1,20 @@
 """Views for dashboard app."""
 from rest_framework import views, permissions
 from rest_framework.response import Response
-from django.db.models import Sum, Count
+from django.db.models import Sum, Count, Avg
 from django.utils import timezone
+from datetime import timedelta
 from rides.models import Ride
 from users.models import User
 from drivers.models import Driver
 from payments.models import Payment
-from .serializers import DashboardStatsSerializer
+from .serializers import DashboardStatsSerializer, DashboardChartDataSerializer
+from core.permissions import IsAdmin
 
 
 class DashboardStatsView(views.APIView):
     """View for dashboard statistics."""
-    permission_classes = [permissions.IsAdminUser]
+    permission_classes = [permissions.IsAuthenticated, IsAdmin]
     
     def get(self, request):
         """Get dashboard statistics."""
@@ -41,4 +43,35 @@ class DashboardStatsView(views.APIView):
         serializer = DashboardStatsSerializer(data=data)
         serializer.is_valid(raise_exception=True)
         
+        return Response(serializer.data)
+
+
+class DashboardChartView(views.APIView):
+    """View for dashboard chart data."""
+    permission_classes = [permissions.IsAuthenticated, IsAdmin]
+    
+    def get(self, request):
+        """Get chart data for last 30 days."""
+        start_date = timezone.now().date() - timedelta(days=30)
+        end_date = timezone.now().date()
+        
+        chart_data = []
+        current_date = start_date
+        while current_date <= end_date:
+            daily_rides = Ride.objects.filter(
+                created_at__date=current_date
+            ).count()
+            daily_revenue = Payment.objects.filter(
+                created_at__date=current_date,
+                status='completed'
+            ).aggregate(total=Sum('amount'))['total'] or 0
+            
+            chart_data.append({
+                'date': current_date,
+                'rides': daily_rides,
+                'revenue': daily_revenue
+            })
+            current_date += timedelta(days=1)
+        
+        serializer = DashboardChartDataSerializer(chart_data, many=True)
         return Response(serializer.data)

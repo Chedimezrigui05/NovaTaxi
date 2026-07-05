@@ -11,3 +11,12 @@ router.register(r'', PaymentViewSet, basename='payment')
 urlpatterns = [
     path('', include(router.urls)),
 ]
+
+app_name = 'payments'
+
+router = DefaultRouter()
+router.register(r'', PaymentViewSet, basename='payment')
+
+urlpatterns = [
+    path('', include(router.urls)),
+]

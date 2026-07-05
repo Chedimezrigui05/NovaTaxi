@@ -12,3 +12,13 @@ router.register(r'messages', MessageViewSet, basename='message')
 urlpatterns = [
     path('', include(router.urls)),
 ]
+
+app_name = 'chat'
+
+router = DefaultRouter()
+router.register(r'rooms', ChatRoomViewSet, basename='chat-room')
+router.register(r'messages', MessageViewSet, basename='message')
+
+urlpatterns = [
+    path('', include(router.urls)),
+]
