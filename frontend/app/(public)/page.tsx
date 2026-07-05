@@ -580,18 +580,14 @@ function ContactSection() {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-brand-50 text-slate-950">
-      <Navbar />
-      <main>
-        <HeroSection />
-        <FeaturesSection />
-        <HowItWorksSection />
-        <TestimonialsSection />
-        <FAQSection />
-        <DownloadAppSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <HeroSection />
+      <FeaturesSection />
+      <HowItWorksSection />
+      <TestimonialsSection />
+      <FAQSection />
+      <DownloadAppSection />
+      <ContactSection />
+    </>
   );
 }
