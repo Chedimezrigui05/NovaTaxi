@@ -26,7 +26,7 @@ export default function BookPage() {
 
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
-              href="/login"
+              href="/login/client"
               className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-brand-400 via-brand-500 to-gilt-500 px-6 py-3 text-sm font-semibold text-brand-950 shadow-gold transition hover:shadow-gold-lg"
             >
               Sign in to book
