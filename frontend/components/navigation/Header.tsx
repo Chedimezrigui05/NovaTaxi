@@ -34,10 +34,16 @@ export function Header({ variant }: HeaderProps) {
               </Link>
             ))}
             <Link
-              href="/dashboard"
+              href="/login"
+              className="text-sm font-medium text-brand-700 transition hover:text-brand-900"
+            >
+              Sign in
+            </Link>
+            <Link
+              href="/book"
               className="rounded-full bg-gradient-to-r from-brand-400 via-brand-500 to-gilt-500 px-5 py-2 text-sm font-semibold text-brand-950 shadow-gold transition hover:shadow-gold-lg"
             >
-              Dashboard
+              Book ride
             </Link>
           </nav>
         ) : (

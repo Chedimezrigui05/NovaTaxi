@@ -48,10 +48,10 @@ export default function ServicesPage() {
             </div>
             <h2 className="mt-6 text-2xl font-semibold text-slate-950">{service.name}</h2>
             <p className="mt-4 text-slate-600">{service.description}</p>
-            <div className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 transition group-hover:text-brand-900">
+            <Link href="/book" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 transition group-hover:text-brand-900">
               Book this ride
               <span aria-hidden="true">→</span>
-            </div>
+            </Link>
           </Card>
         ))}
       </section>

@@ -1,13 +1,12 @@
 'use client';
 
 import { AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Footer } from '@/components/ui/footer';
 import { SectionTitle } from '@/components/ui/typography';
 import { Input } from '@/components/ui/input';
-import { Navbar } from '@/components/ui/navbar';
 import { Textarea } from '@/components/ui/textarea';
 import { Motion } from '@/lib/motion';
 import { useState } from 'react';
@@ -56,9 +55,9 @@ function HeroSection() {
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Button className="px-8 py-3 text-base">
+              <Link href="/book" className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-brand-400 via-brand-500 to-gilt-500 px-8 py-3 text-base font-medium text-brand-950 shadow-gold transition hover:shadow-gold-lg">
                 Réserver un trajet
-              </Button>
+              </Link>
               <Button variant="secondary" className="border-brand-400/40 bg-gradient-to-r from-brand-400/20 to-gilt-500/20 text-brand-100 hover:bg-brand-400/30">
                 Découvrir l’app
               </Button>

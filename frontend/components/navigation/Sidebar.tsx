@@ -3,6 +3,7 @@ import Link from 'next/link';
 const sidebarItems = [
   { label: 'Overview', href: '/dashboard' },
   { label: 'Trips', href: '/dashboard/trips' },
+  { label: 'Clients', href: '/dashboard/clients' },
   { label: 'Drivers', href: '/dashboard/drivers' },
   { label: 'Settings', href: '/dashboard/settings' },
 ];
